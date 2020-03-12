@@ -1,0 +1,119 @@
+@charset "UTF-8";
+#GameTableBorder{
+	background-color: #fff;
+    max-width: 90%;
+    left: 5%;
+    margin-top: 5%;
+    border-radius: 39.9px;
+    padding: 0;
+}
+#PlayerTableBorder{
+	background-color: #fff;
+    max-width: 90%;
+    left: 5%;
+    margin-top: 5%;
+    border-radius: 39.9px;
+    padding: 3%;
+    
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
+}
+.naviRecord{
+	border-top: solid 3.9px #f00;
+    text-align: center;
+    background-color: #fff;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    font-size: xx-large;
+    cursor: pointer;
+    max-width: 45%;
+    left: 5%;
+}
+#insertDate{
+   background-color: #fff;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 1%;
+    margin-bottom: 5%;
+}
+.attribute{
+	text-align: center;
+    border: double;
+    font-size: larger;
+}
+th{
+    border: solid 1px #e0e0e0;
+	padding: 1%;
+}
+#teamChoice{
+    margin-left: 5%;
+    width: 9%;
+    height: 4.7%;
+    border-radius: 4.6px;
+    color: #28a745;
+    border-color: #28a745;
+}
+#teamChoice option{
+	height: 4.7%;
+}
+.tuple{
+	
+}
+#gametable{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+.gameTeamChoice{
+ 	margin-left: 5%;
+    border-radius: 4.6px;
+    color: #28a745;
+    border-color: #28a745;
+}
+#insertButton{
+	background-color: #28a745;
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 5%;
+}
+
+
+/* 애니메이션 효과 */
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+

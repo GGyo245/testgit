@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.co.fifa.DAO.GoalMapper">
+
+<!-- 사용자에게 년도, 월의  날짜 정보를 받고 년,월에 해당되는 경기기록들 출력 -->
+<select id="selectGoalList" resultType="hashmap">
+	select 
+	    p.name
+	    ,sum(POINT) as totalgoal
+	    ,t.TEAMNAME
+	from 
+	    player p inner join goal g 
+	on 
+	    p.PLAYERNUM = g.PLAYERNUM
+	        inner join team t
+	on
+	    p.TEAMNUM = t.TEAMNUM
+	group by 
+	    t.TEAMNAME
+	    ,p.name
+	order by
+	    totalgoal desc
+</select>
+
+<select id="selectTotalCount" resultType="int">
+	select
+  		count(*)
+	from
+	    (select 
+		    p.name
+		    ,sum(POINT) as totalgoal
+		    ,t.TEAMNAME
+		from 
+		    player p inner join goal g 
+		on 
+		    p.PLAYERNUM = g.PLAYERNUM
+		        inner join team t
+		on
+		    p.TEAMNUM = t.TEAMNUM
+		group by 
+		    t.TEAMNAME
+		    ,p.name
+		order by
+		    totalgoal desc)
+</select>
+
+
+</mapper>

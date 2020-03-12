@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.co.fifa.DAO.TeamMapper">
+
+<!-- 팀 이름으로 선수의 개인정보들을 출력 -->
+<select id="selectPlayerFromTeamName" parameterType="String" resultType="hashmap">
+	select
+		p.playernum
+    	,p.name
+    	,TO_CHAR(p.birth,'YYYY-MM-DD') AS birth
+    	,TO_CHAR(p.debut,'YYYY-MM-DD') AS debut
+    	,TO_CHAR(p.retire,'YYYY-MM-DD') AS retire
+	from 
+	    player p inner join team t on t.teamnum = p.TEAMNUM 
+	where 
+	    t.teamname like #{teamName}
+	order by
+		p.birth
+</select>
+
+<!-- 팀 이름으로 팀 정보 출력 -->
+<select id="selectTeamFromTeamName" parameterType="string" resultType="hashmap">
+	select 
+		team.TEAMNAME
+		,team.WIN,team.LOSE
+		,team.DRAW
+		,count(playernum) as playernum
+		,TO_CHAR(team.FOUNDATIONDATE, 'YYYY-MM-DD') as FOUNDATIONDATE
+	from 
+		player inner join team on team.teamnum = PLAYER.TEAMNUM 
+	where 
+		team.teamname like #{teamName}
+	group by 
+		team.TEAMNAME,team.WIN,team.LOSE,team.DRAW,team.FOUNDATIONDATE
+		
+</select>
+
+
+</mapper>
+
+
+

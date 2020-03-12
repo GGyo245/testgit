@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+#myPageForm{
+	margin-top:5%;
+}
+header{
+    text-align: center;
+    margin-top: 1.5%;
+    margin-bottom: 5%;
+    font-size: xx-large;
+}
+form{
+	width: 60%;
+    margin-left: 20%;
+}
+.warning{
+  font-size: 12px;
+  padding: 10px;
+  color: red;
+}
+.success{
+  font-size: 12px;
+  padding: 10px;
+  color:green;
+}
+.form.group{
+  padding: 10px;
+}
+#joinbtn{
+	background-color: #1892ed;
+	border-color: #1892ed;
+}
+#toDeleteUser{
+	margin-right: 2%;
+}
+
+
+
+

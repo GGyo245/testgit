@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	
+	<typeAliases>
+		<typeAlias type="kr.co.fifa.VO.GameVO" alias="game"/>
+		<typeAlias type="kr.co.fifa.VO.GoalVO" alias="goal"/>
+		<typeAlias type="kr.co.fifa.VO.PlayerVO" alias="player"/>
+		<typeAlias type="kr.co.fifa.VO.TeamVO" alias="team"/>
+		<typeAlias type="kr.co.fifa.VO.UserVO" alias="user"/>
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="mapper/GameMapper.xml"/>
+		<mapper resource="mapper/TeamMapper.xml"/>
+		<mapper resource="mapper/GoalMapper.xml"/>
+		<mapper resource="mapper/UserMapper.xml"/>
+		<mapper resource="mapper/CURDMapper.xml"/>
+		<mapper resource="mapper/PlayerMapper.xml"/>
+	</mappers>
+	
+</configuration>

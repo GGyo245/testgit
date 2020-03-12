@@ -1,0 +1,25 @@
+@charset "UTF-8";
+a:link { color: black;  text-decoration: none;}
+a:visited { color: black; text-decoration: none;}
+a:active { color: black; text-decoration: none; }
+a:hover{color: black; text-decoration: underline;}
+a{
+	font-weight: 600;
+}
+#logo{
+  color: #1892ed;
+  font-size: 60px;
+  padding-top: 100px;
+  cursor: pointer;
+}
+#imgtag{
+  padding: 10px;
+}
+header{
+  margin: 30px;
+}
+#loginbtn{
+	background-color: #1892ed;
+	border-color: #1892ed;
+}
+

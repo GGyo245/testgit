@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.co.fifa.DAO.GameMapper">
+
+<!-- 사용자에게 년도, 월의  날짜 정보를 받고 년,월에 해당되는 경기기록들 출력 -->
+<select id="selectGameList" parameterType="game" resultType="hashmap">
+	select 
+		team.TEAMNAME as hometeamnam
+		,game.homescore
+		,game.awayscore
+		,(select team.TEAMNAME from team where teamnum = awayteam)as awayteamname
+		,to_char(game.gamedate,'YYYY-MM-DD') as gamedate
+	from 
+		game left join team 
+	on 
+		game.HOMETEAM = team.TEAMNUM
+	where 
+		to_char(game.gamedate,'YYYY-MM') = #{gamedate}
+	order by
+		gamedate desc
+</select>
+
+<!-- 승리 등록 -->
+<update id="updateWin" parameterType="int">
+	update 
+		team 
+	set 
+		win = win +1
+	where 
+		teamnum = #{teamnum}
+</update>
+
+<!-- 패 등록 -->
+<update id="updateLose" parameterType="int">
+	update 
+		team 
+	set 
+		lose = lose +1
+	where 
+		teamnum = #{teamnum}
+</update>
+
+<!-- 무승부 등록 -->
+<update id="updateDraw" parameterType="int">
+	update 
+		team 
+	set 
+		draw = draw +1 
+	where 
+		teamnum = #{teamnum}
+</update>
+
+</mapper>
