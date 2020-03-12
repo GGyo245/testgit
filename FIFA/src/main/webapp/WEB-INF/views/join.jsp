@@ -28,7 +28,7 @@
           </div>
         </header>
         <div class="text-center">
-          <h4 class="form-signin-heading" id="subheadLine">환영합니다.!</h4>
+          <h4 class="form-signin-heading" id="subheadLine">환영합니다.</h4>
         </div>
         <form action="/user/join" name="Join" class="form-horizontal" method=POST
           onsubmit='return mysubmit()'>
